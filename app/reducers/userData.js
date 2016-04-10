@@ -1,3 +1,4 @@
+
 import { RECEIVE_USERS, REQUEST_USERS } from '../actions';
 
 export default function userData(state = {
