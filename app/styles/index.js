@@ -1,5 +1,5 @@
-const styles = {
-  // add styles here
-};
 
-export default styles;
+export const headerStyle = {
+  backgroundColor: 'blue',
+  padding: 10
+};
