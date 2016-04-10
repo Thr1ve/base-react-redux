@@ -1,6 +1,7 @@
+
 import React from 'react';
 
-const Index = React.createClass({
+const IndexPage = React.createClass({
   render() {
     return (
       <div>
@@ -10,4 +11,4 @@ const Index = React.createClass({
   }
 });
 
-export default Index;
+export default IndexPage;
