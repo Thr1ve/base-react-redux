@@ -1,14 +1,13 @@
 
 import React from 'react';
 
-import { headerStyle } from '../styles';
+import Header from '../components/Header';
 
 const App = React.createClass({
   render() {
     return (
       <div>
-        <div style={headerStyle}> This is the Header from App.js! </div>
-        <br />
+        <Header />
         {this.props.children}
       </div>
     );
