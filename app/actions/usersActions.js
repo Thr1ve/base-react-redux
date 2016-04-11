@@ -18,6 +18,7 @@ export const requestUsers = () => ({ type: REQUEST_USERS });
 // will then be invoked asynchronously by our redux-thunk middleware,
 // which will pass in the `dispatch` and `getState` methods from our store
 // as parameters
+
 export const fetchUsers = () => dispatch => {
   // First, we dispatch a REQUEST_USERS action to
   // inform our state that we're trying to load data
@@ -33,9 +34,6 @@ export const fetchUsers = () => dispatch => {
     .catch(err => console.log(err));
 };
 
-// For a more robust implementation of this logic, check
-// out how Dan Abramov uses a 'didInvalidate' property at:
-// https://github.com/reactjs/redux/blob/master/examples/async/actions/index.js#L47
 export const shouldFetchUsers = state => {
   const { userData } = state;
   // return true if we don't have any users
@@ -48,9 +46,12 @@ export const shouldFetchUsers = state => {
   }
   return false;
 };
+// ^ For a more robust implementation of this logic, check
+// out how Dan Abramov uses a 'didInvalidate' property at:
+// https://github.com/reactjs/redux/blob/master/examples/async/actions/index.js#L47
 
 // This gives us a way to prevent additional network
-// requests for data we already have using the above two functions
+// requests for data that we already have by using the above two functions
 export const fetchUsersIfNeeded = () => (dispatch, getState) => {
   if (shouldFetchUsers(getState())) {
     dispatch(fetchUsers());
